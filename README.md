@@ -29,7 +29,6 @@ prostate_ferroptosis/
 │   ├── 07_stromal_mesenchymal_analysis.R # Ptn/Igf1 dynamics in stromal cells
 │   └── 08_bulk_rnaseq.R                # DESeq2 + GCT/CLS export
 ├── data/                               # Input data (not tracked by git)
-│   ├── Luis_marker.xlsx                # Reference marker gene set
 │   ├── Pathway/                        # GMT pathway files
 │   └── GSE48403_ADT_RNA/               # Human pre/post ADT RNA-seq
 ├── output/                             # Generated figures and result tables, also deposited in FigShare
@@ -40,30 +39,18 @@ prostate_ferroptosis/
 
 All scripts are written in **R** using the **ir** (R) kernel. Key packages:
 
-| Package | Version | Purpose |
-|---|---|---|
-| Seurat | ≥5.0 | Single-cell analysis |
-| harmony | - | Batch integration |
-| DoubletFinder | - | Doublet detection |
-| clusterProfiler | - | GSEA |
-| enrichplot | - | GSEA visualization |
-| DESeq2 | - | Bulk RNA-seq DE |
-| biomaRt | - | Mouse↔Human ortholog mapping |
-| ggplot2 / patchwork / ggpubr | - | Visualization |
-| data.table | - | Fast I/O |
+| Package | Version |
+|---|---|
+| Seurat | 5.1.0 |
+| harmony | 1.2.1 | 
+| DoubletFinder | - | 
+| clusterProfiler | 4.14.3 |
+| enrichplot | 1.26.2 |
+| DESeq2 | 1.46.0 | 
+| biomaRt | 2.62.0 | 
+| ggplot2 | 4.0.1 | 
+| data.table | 1.16.4 | 
 
-Install with:
-```r
-# Bioconductor packages
-BiocManager::install(c("DESeq2", "clusterProfiler", "enrichplot", "org.Hs.eg.db",
-                       "org.Mm.eg.db", "MAST", "biomaRt"))
-
-# CRAN packages
-install.packages(c("Seurat", "harmony", "ggpubr", "patchwork",
-                   "ggnewscale", "data.table", "readxl", "tibble"))
-
-# GitHub packages
-remotes::install_github("chris-mcginnis-ucsf/DoubletFinder")
 ```
 
 ## Usage
