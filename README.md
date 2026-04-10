@@ -32,7 +32,7 @@ prostate_ferroptosis/
 │   ├── Luis_marker.xlsx                # Reference marker gene set
 │   ├── Pathway/                        # GMT pathway files
 │   └── GSE48403_ADT_RNA/               # Human pre/post ADT RNA-seq
-├── output/                             # Generated figures and result tables
+├── output/                             # Generated figures and result tables, also deposited in FigShare
 └── README.md
 ```
 
@@ -91,4 +91,4 @@ In-house scRNA-seq data (ML001, ML002, MW3, MW4, MW6, MW7, MW8) will be deposite
 
 ## Contact
 
-For questions, please contact the corresponding author or open a GitHub Issue.
+For questions, please contact with Weiping Li (wl2761@cumc.columbia.edu) and Zejian Wang (zw2994@cumc.columbia.edu) if you have any questions rated with this record
