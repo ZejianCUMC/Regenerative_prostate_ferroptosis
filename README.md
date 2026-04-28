@@ -18,7 +18,7 @@ The analysis pipeline covers:
 
 ```
 prostate_ferroptosis/
-├── R/
+├── scripts/
 │   ├── 00_setup.R                      # Libraries, color palettes, marker gene sets
 │   ├── 01_data_loading_hto_demux.R     # 10X loading + HTODemux for ML001/002/MW3/4/8
 │   ├── 02_clustering_doublet_removal.R # Clustering, DoubletFinder, luminal extraction
