@@ -29,10 +29,10 @@ prostate_ferroptosis/
 │   ├── 05_luminal_signature_visualization.R # Figure panels (scatter plots)
 │   ├── 06_gsea_cell_death.R            # GSEA: luminal, ENZA, CSPC vs CRPC
 │   ├── 07_stromal_mesenchymal_analysis.R # Ptn/Igf1 dynamics in stromal cells
-│   └── 08_bulk_rnaseq.R                # DESeq2 + GCT/CLS export
+│   ├── 08_bulk_rnaseq.R                # DESeq2 + GCT/CLS export
 |   └── 09_09_pyVIPER.py                # pyVIPER workflow
 ├── data/                               
-│   ├── Intact.xgboost_model.json       # Signature for xgboost
+│   └── Intact.xgboost_model.json       # Signature for xgboost
 ├── output/                             # Generated figures and result tables, also deposited in FigShare
 └── README.md
 ```
@@ -51,17 +51,6 @@ prostate_ferroptosis/
 | ggplot2 | 4.0.1 | 
 | data.table | 1.16.4 | 
 
-```
-
-## Usage
-
-Run scripts in order from within the project root:
-
-```r
-source("R/00_setup.R")
-source("R/01_data_loading_hto_demux.R")
-source("R/02_clustering_doublet_removal.R")
-# ... and so on
 ```
 
 ## Public Data
