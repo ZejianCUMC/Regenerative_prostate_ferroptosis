@@ -30,9 +30,9 @@ prostate_ferroptosis/
 │   ├── 06_gsea_cell_death.R            # GSEA: luminal, ENZA, CSPC vs CRPC
 │   ├── 07_stromal_mesenchymal_analysis.R # Ptn/Igf1 dynamics in stromal cells
 │   └── 08_bulk_rnaseq.R                # DESeq2 + GCT/CLS export
-├── data/                               # Input data (not tracked by git)
-│   ├── Pathway/                        # GMT pathway files
-│   └── GSE48403_ADT_RNA/               # Human pre/post ADT RNA-seq
+|   └── 09_09_pyVIPER.py                # pyVIPER workflow
+├── data/                               
+│   ├── Intact.xgboost_model.json       # Signature for xgboost
 ├── output/                             # Generated figures and result tables, also deposited in FigShare
 └── README.md
 ```
@@ -70,7 +70,7 @@ source("R/02_clustering_doublet_removal.R")
 - **Pre/post ADT bulk RNA-seq**: [GSE48403](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE48403)
 - **mCRPC CSPC/CRPC tumor cells**: [GSE264573](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE264573)
 
-In-house mouse prostate scRNA-seq data (GSE295132 and GSE295388) will be released upon publication.
+In-house mouse prostate scRNA-seq data (GSE295132 and GSE295388) will be released upon publication. RDS, ipynb and signature score archives also deposited at FigShare [link](10.6084/m9.figshare.27984227).
 
 ## Contact
 
