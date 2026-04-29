@@ -1,6 +1,7 @@
 # Prostate Cancer Ferroptosis – scRNA-seq & Bulk RNA-seq Analysis
 
-This repository contains all R scripts used for bioinformatics analysis in our study on ferroptosis and luminal cell plasticity in prostate cancer under androgen deprivation therapy (ADT).
+This repository contains all scripts used for bioinformatics analysis in our study on dual pathway regulation of castration response and ferroptosis in the prostate epithelium
+
 
 ## Overview
 
