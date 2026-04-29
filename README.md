@@ -70,7 +70,7 @@ source("R/02_clustering_doublet_removal.R")
 - **Pre/post ADT bulk RNA-seq**: [GSE48403](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE48403)
 - **mCRPC CSPC/CRPC tumor cells**: [GSE264573](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE264573)
 
-In-house mouse prostate scRNA-seq data (GSE295132 and GSE295388) will be released upon publication. RDS, ipynb and signature score archives also deposited at FigShare [link](10.6084/m9.figshare.27984227).
+In-house mouse prostate scRNA-seq data (GSE295132 and GSE295388) will be released upon publication. RDS, ipynb and signature score archives also deposited at FigShare [link](https://10.6084/m9.figshare.27984227).
 
 ## Contact
 
