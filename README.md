@@ -24,13 +24,14 @@ prostate_ferroptosis/
 │   ├── 00_setup.R                      # Libraries, color palettes, marker gene sets
 │   ├── 01_data_loading_hto_demux.R     # 10X loading + HTODemux for ML001/002/MW3/4/8
 │   ├── 02_clustering_doublet_removal.R # Clustering, DoubletFinder, luminal extraction
-│   ├── 03_karthaus_science_reanalysis.R# Mouse + Human public dataset re-analysis
+│   ├── 03_karthaus_science_reanalysis.R # Mouse + Human public dataset re-analysis
+│   ├── 04_xgboost_Classfy_Lum_cell_type.py # Classifier
 │   ├── 04_luminal_signature_scoring.R  # LumA/LumP scores + classifier integration
 │   ├── 05_luminal_signature_visualization.R # Figure panels (scatter plots)
 │   ├── 06_gsea_cell_death.R            # GSEA: luminal, ENZA, CSPC vs CRPC
 │   ├── 07_stromal_mesenchymal_analysis.R # Ptn/Igf1 dynamics in stromal cells
 │   ├── 08_bulk_rnaseq.R                # DESeq2 + GCT/CLS export
-|   └── 09_09_pyVIPER.py                # pyVIPER workflow
+|   └── 09_pyVIPER.py                # pyVIPER workflow
 ├── data/                               
 │   └── Intact.xgboost_model.json       # Signature for xgboost
 ├── output/                             # Generated figures and result tables, also deposited in FigShare
