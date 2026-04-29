@@ -1,4 +1,4 @@
-# Prostate Cancer Ferroptosis – scRNA-seq & Bulk RNA-seq Analysis
+# Prostate Ferroptosis – scripts
 
 This repository contains all scripts used for bioinformatics analysis in our study on dual pathway regulation of castration response and ferroptosis in the prostate epithelium
 
@@ -8,7 +8,7 @@ This repository contains all scripts used for bioinformatics analysis in our stu
 The analysis pipeline covers:
 
 1. **Single-cell RNA-seq** – CellHash demultiplexing, Seurat clustering, doublet removal, and luminal cell extraction for five in-house mouse samples (ML001, ML002, MW3, MW4, MW8)
-2. **Public dataset reanalysis** – Reproduction of Karthaus et al. 2020 (*Science*) results for mouse castration time-course and human prostate atlas
+2. **Public dataset reanalysis** – Reproduction of Karthaus et al. 2020 (*Science*) results for mouse castration time-course and several human prostate cancer datasets
 3. **Luminal signature scoring** – LumA/LumP activity scores (bin-matched null distribution) + integration with a machine-learning classifier
 4. **Luminal signature visualization** – Figure panels (Figs 1e, 2, 3e, 4, 5i) comparing cohorts across genetic perturbations and drug treatments
 5. **GSEA** – Cell-death pathway enrichment in luminal cells, mCRPC ENZA responders, and CSPC vs CRPC tumor cells
@@ -36,9 +36,7 @@ prostate_ferroptosis/
 └── README.md
 ```
 
-## Dependencies
-
-All scripts are written in **R** using the **ir** (R) kernel. Key packages:
+## R Dependencies
 
 | Package | Version |
 |---|---|
@@ -65,18 +63,14 @@ source("R/02_clustering_doublet_removal.R")
 # ... and so on
 ```
 
-Steps 01–02 require access to raw 10X Genomics output directories.  
-Steps 03–08 can be run independently given the intermediate `.RDS` objects.
-
-## Data Availability
+## Public Data
 
 - **Public mouse data**: [GSE146811](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE146811) (Karthaus et al. 2020 *Science*)
-- **Human prostate atlas**: Available from the Karthaus et al. 2020 *Science* supplementary portal
 - **Pre/post ADT bulk RNA-seq**: [GSE48403](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE48403)
 - **mCRPC CSPC/CRPC tumor cells**: [GSE264573](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE264573)
 
-In-house scRNA-seq data (ML001, ML002, MW3, MW4, MW6, MW7, MW8) will be deposited to GEO upon publication.
+In-house scRNA-seq data (GSE295132 and GSE295388) will be released upon publication.
 
 ## Contact
 
-For questions, please contact with Weiping Li (wl2761@cumc.columbia.edu) and Zejian Wang (zw2994@cumc.columbia.edu) if you have any questions rated with this record
+For questions, please contact with Weiping Li (wl2761@cumc.columbia.edu), Zejian Wang (zw2994@cumc.columbia.edu) and Michael Shen (ms3625@cumc.columbia.edu) if you have any questions rated with this record
