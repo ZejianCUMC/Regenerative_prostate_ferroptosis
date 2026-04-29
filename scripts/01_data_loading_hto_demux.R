@@ -66,9 +66,29 @@ load_and_demux_sample <- function(gex_dir,
 # ML001
 # =============================================================================
 ML001_seurat_obj <- load_and_demux_sample(
-  gex_dir     = "/ifs/data/ms3625_gp/zw2994/1-project/1-sc_remap/batch1/outs/filtered_feature_bc_matrix",
+  gex_dir     = "/path/to/ML001/filtered_feature_bc_matrix",
   sample_name = "ML001"
 )
+
+ML001_seurat_obj$timepoint <- sapply(ML001_seurat_obj@meta.data$HTO_maxID,
+          function(x)
+              ifelse(
+                  x %in% c("B301","B303"),
+                  "1w",
+                  "4w"
+              )
+              
+          )
+ML001_seurat_obj$CellType <- sapply(ML001_seurat_obj@meta.data$HTO_maxID,
+          function(x)
+              ifelse(
+                  x %in% c("B301","B302"),
+                  "Luminal AR KO",
+                  "Stromal AR KO"
+              )
+              
+          )
+
 saveRDS(ML001_seurat_obj, "ML001_seurat_obj_HTO.RDS")
 
 
@@ -76,9 +96,30 @@ saveRDS(ML001_seurat_obj, "ML001_seurat_obj_HTO.RDS")
 # ML002
 # =============================================================================
 ML002_seurat_obj <- load_and_demux_sample(
-  gex_dir     = "/ifs/data/ms3625_gp/zw2994/1-project/1-sc_remap/batch2/outs/filtered_feature_bc_matrix",
+  gex_dir     = "/path/to/ML002/filtered_feature_bc_matrix",
   sample_name = "ML002"
 )
+ML002_seurat_obj$timepoint <- sapply(ML002_seurat_obj@meta.data$HTO_maxID,
+          function(x)
+              ifelse(
+                  x %in% c("B301","B303"),
+                  "1w",
+                  "4w"
+              )
+              
+          )
+
+ML002_seurat_obj$CellType <- sapply(ML002_seurat_obj@meta.data$HTO_maxID,
+          function(x)
+              ifelse(
+                  x %in% c("B301","B302"),
+                  "Luminal Acsl4 KO",
+                  "Luminal Atg7 KO "
+              )
+              
+          )
+
+
 saveRDS(ML002_seurat_obj, "ML002_seurat_obj_HTO.RDS")
 
 
@@ -89,6 +130,17 @@ MW3_seurat_object <- load_and_demux_sample(
   gex_dir     = "/path/to/MW3/filtered_feature_bc_matrix",
   sample_name = "MW3"
 )
+
+MW3_seurat_object@meta.data <- 
+        MW3_seurat_object@meta.data %>%
+             mutate( 
+                    CellType=case_when(
+                        HTO_maxID=="B301" ~ "AR-intact",
+                        HTO_maxID=="B302" ~ "AR Castration 4w",
+                        HTO_maxID=="B303" ~ "Stromal and Luminal AR KO",
+                        HTO_maxID=="B304" ~ "FVB WT cas 3d"
+                                        )
+        )
 saveRDS(MW3_seurat_object, "MW3_seurat_object_HTO.RDS")
 
 
@@ -99,6 +151,16 @@ MW4_seurat_object <- load_and_demux_sample(
   gex_dir     = "/path/to/MW4/filtered_feature_bc_matrix",
   sample_name = "MW4"
 )
+MW4_seurat_object@meta.data <-MW4_seurat_object@meta.data %>%
+      mutate(
+        CellType = case_when(
+            HTO_maxID=="B301" ~ "Atg7-WT intact",
+            HTO_maxID=="B302" ~ "Atg7-WT intact Castration 4w",
+            HTO_maxID=="B303" ~ "Atg7-Ko intact",
+            HTO_maxID=="B304" ~ "NKX3.1+/+ 4w",
+            HTO_maxID=="B305" ~ "NKX3.1-/- 4w",
+        )
+    )
 saveRDS(MW4_seurat_object, "MW4_seurat_object_HTO.RDS")
 
 

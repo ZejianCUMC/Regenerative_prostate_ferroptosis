@@ -52,8 +52,7 @@ Wouter_science_obj.T00_intact <- subset(Wouter_science_obj, timepoint == "T00_In
 # Batch-aware SCTransform + CCA integration
 Wouter_science_obj.T00_intact[["RNA"]] <- split(Wouter_science_obj.T00_intact[["RNA"]],
                                                  f = Wouter_science_obj.T00_intact$batchID)
-Wouter_science_obj.T00_intact <- Wouter_science_obj.T00_intact %>%
-  NormalizeData() %>% FindVariableFeatures() %>% ScaleData() %>% SCTransform()
+Wouter_science_obj.T00_intact <- Wouter_science_obj.T00_intact %>% SCTransform()
 
 Wouter_science_obj.T00_intact <- IntegrateLayers(
   object               = Wouter_science_obj.T00_intact,
@@ -149,8 +148,7 @@ Wouter_science_stromal <- subset(Wouter_science_stromal,
 # Batch-integrated normalization (CCA)
 Wouter_science_stromal[["RNA"]] <- split(Wouter_science_stromal[["RNA"]],
                                           f = Wouter_science_stromal$batchID)
-Wouter_science_stromal <- Wouter_science_stromal %>%
-  NormalizeData() %>% FindVariableFeatures() %>% ScaleData() %>% SCTransform()
+Wouter_science_stromal <- Wouter_science_stromal %>% SCTransform()
 
 Wouter_science_stromal <- IntegrateLayers(
   object               = Wouter_science_stromal,

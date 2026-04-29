@@ -100,6 +100,14 @@ merge_classifier <- function(sig_df, pred_csv, lum_type_col = "LumType") {
   return(sig_df)
 }
 
+# =============================================================================
+# Define marker genes for LumA and LumP (from Laura Crowley et al. eLife 2020)
+# =============================================================================
+
+LumA_marker_lab <- c("Gsdma", "Tgm4", "Krt8", "Cd24a", "Pbsn", "Hoxb13","Ceacam1", "Prom1", "Nkx3-1")
+
+LumP_marker_lab <- c("Cldn10","Lrrc26","Ppp1r1b", "Krt4", "Wfdc2", "Krt7", "Tacstd2", "Clu", "Ly6a","Krt8", "Cd24a","Ceacam1")
+
 
 # =============================================================================
 # Wouter Science cohort (mouse)

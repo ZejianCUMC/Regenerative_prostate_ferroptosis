@@ -14,6 +14,7 @@ The analysis pipeline covers:
 5. **GSEA** – Cell-death pathway enrichment in luminal cells, mCRPC ENZA responders, and CSPC vs CRPC tumor cells
 6. **Stromal/mesenchymal analysis** – Ptn/Igf1 expression dynamics across castration time points, AR stratification
 7. **Bulk RNA-seq** – DESeq2 time-course analysis, Pre vs Post ADT (GSE48403), GCT/CLS export for GSEA
+8. **VIPER** - pyVIPER workflow to infer protein activity
 
 ## Repository Structure
 
@@ -69,7 +70,7 @@ source("R/02_clustering_doublet_removal.R")
 - **Pre/post ADT bulk RNA-seq**: [GSE48403](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE48403)
 - **mCRPC CSPC/CRPC tumor cells**: [GSE264573](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE264573)
 
-In-house scRNA-seq data (GSE295132 and GSE295388) will be released upon publication.
+In-house mouse prostate scRNA-seq data (GSE295132 and GSE295388) will be released upon publication.
 
 ## Contact
 

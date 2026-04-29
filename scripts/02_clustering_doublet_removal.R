@@ -355,9 +355,6 @@ rm(MW8_obj)
 MW8_seurat_object[["RNA"]] <- split(MW8_seurat_object[["RNA"]],
                                      f = MW8_seurat_object$Batch)
 MW8_seurat_object <- MW8_seurat_object %>%
-  NormalizeData() %>%
-  FindVariableFeatures() %>%
-  ScaleData() %>%
   SCTransform() %>%
   RunPCA(verbose = FALSE)
 
@@ -381,12 +378,12 @@ MW8_seurat_object <- PrepSCTFindMarkers(MW8_seurat_object)
 MW8_marker <- FindAllMarkers(MW8_seurat_object, only.pos = TRUE,
                               min.pct = 0.4, logfc.threshold = 0.25,
                               group.by = "SCT_snn_res.0.4")
-write.csv(MW8_marker, "output/MW8_marker_res0.5_top100.csv", row.names = FALSE)
+write.csv(MW8_marker, "output/MW8_marker_res0.4_top100.csv", row.names = FALSE)
 
 # Manual annotation → load from xlsx
-MW8_annotation <- readxl::read_xlsx("data/MW7_marker.res0.5.top100.xlsx", sheet = 2)
+MW8_annotation <- readxl::read_xlsx("data/MW7_marker.res0.4.top100.xlsx", sheet = 2)
 MW8_seurat_object$cluster <- MW8_annotation$PutativeCellType[
-  match(MW8_seurat_object$SCT_snn_res.0.5, MW8_annotation$cluster)
+  match(MW8_seurat_object$SCT_snn_res.0.4, MW8_annotation$cluster)
 ]
 
 # DoubletFinder
