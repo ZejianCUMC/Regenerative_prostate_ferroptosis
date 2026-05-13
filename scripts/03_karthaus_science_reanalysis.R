@@ -2,7 +2,7 @@
 # 03_karthaus_science_reanalysis.R
 # Re-analysis of Karthaus et al. 2020 Science scRNA-seq datasets:
 #   - Mouse castration time-course (GSE146811)
-#   - Human prostate atlas
+#   - Human prostate data (https://singlecell.broadinstitute.org/single_cell/study/SCP864)
 #
 # This script reproduces key figures from the original paper and generates
 # PTN/IGF1 expression visualizations used in manuscript figures.
