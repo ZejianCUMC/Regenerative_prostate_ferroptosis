@@ -35,7 +35,6 @@ prostate_ferroptosis/
 |   └── 09_pyVIPER.py                # pyVIPER workflow
 ├── data/                               
 │   └── Intact.xgboost_model.json       # Signature for xgboost
-├── output/                             # Generated figures and result tables, also deposited in FigShare
 └── README.md
 ```
 
